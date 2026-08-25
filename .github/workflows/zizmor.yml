@@ -24,6 +24,7 @@ jobs:
       - name: Run zizmor
         run: zizmor --format sarif .github/workflows/ > zizmor-results.sarif
       - name: Upload SARIF file
+        # Check against https://github.com/github/codeql-action/releases/
         uses: github/codeql-action/upload-sarif@db488ddef3bf6cb639b32c2e9a7c0a7ea8271d28
         with:
           sarif_file: zizmor-results.sarif
